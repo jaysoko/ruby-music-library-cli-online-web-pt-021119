@@ -19,11 +19,8 @@ class MusicLibraryController
     puts "What would you like to do?"
 
     input = ''
-
-
     until input == 'exit' do
       input = gets.downcase.strip
-    end
 
     case input
     when  "list songs"
@@ -33,8 +30,8 @@ class MusicLibraryController
     else
       puts "Jaybird!"
     end
-
-    end
+ end
+end
 
     def list_songs
       #binding.pry
@@ -74,7 +71,7 @@ class MusicLibraryController
       index = input.to_i - 1
       songs = Song.all.sort_by {|song| song.name}
       if index <= songs.size and index >= 0
-        puts "Playing #{songs[index].name} by #{songs[index].artist.name}" if songs[index]
+      puts "Playing #{songs[index].name} by #{songs[index].artist.name}" if songs[index]
       end
     end
 
